@@ -13,8 +13,8 @@ steps:
   - ls -a
   - uname -a
   - echo $PATH
-- export BUN_INSTALL="$HOME/.bun"
-- export PATH=$BUN_INSTALL/bin:$PATH
+  - export BUN_INSTALL="$HOME/.bun"
+  - export PATH=$BUN_INSTALL/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
 
@@ -35,8 +35,8 @@ steps:
   - echo $SHELL
   - echo $PATH
   - cat ~/.bashrc
-- export BUN_INSTALL="$HOME/.bun"
-- export PATH=$BUN_INSTALL/bin:$PATH
+  - export BUN_INSTALL="$HOME/.bun"
+  - export PATH=$BUN_INSTALL/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
 
@@ -62,8 +62,8 @@ steps:
   - ls -a
   - uname -a
   - echo $PATH
-- export BUN_INSTALL="$HOME/.bun"
-- export PATH=$BUN_INSTALL/bin:$PATH
+  - export BUN_INSTALL="$HOME/.bun"
+  - export PATH=$BUN_INSTALL/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
 
@@ -89,8 +89,8 @@ steps:
   - ls -a
   - uname -a
   - echo $PATH
-- export BUN_INSTALL="$HOME/.bun"
-- export PATH=$BUN_INSTALL/bin:$PATH
+  - export BUN_INSTALL="$HOME/.bun"
+  - export PATH=$BUN_INSTALL/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
 
