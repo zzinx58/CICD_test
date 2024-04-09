@@ -1,33 +1,37 @@
----
-kind: pipeline
-type: docker
-name: docker run bun on linux amd64
+# ----------------------------------------------- OK Part below
 
-platform:
-  os: linux
-  arch: amd64
+# ---
+# kind: pipeline
+# type: docker
+# name: docker run bun on linux amd64
 
-steps:
-- name: run ts file
-  image: oven/bun
-  commands:
-  - bun bunTest.ts
+# platform:
+#   os: linux
+#   arch: amd64
 
----
-kind: pipeline
-type: docker
-name: docker run bun on linux arm64
+# steps:
+# - name: run ts file
+#   image: oven/bun
+#   commands:
+#   - bun bunTest.ts
 
-platform:
-# docker runner unable use platform darwin?
-  os: linux
-  arch: arm64
+# ---
+# kind: pipeline
+# type: docker
+# name: docker run bun on linux arm64
 
-steps:
-- name: run ts file
-  image: oven/bun
-  commands:
-  - bun bunTest.ts
+# platform:
+# # docker runner unable use platform darwin?
+#   os: linux
+#   arch: arm64
+
+# steps:
+# - name: run ts file
+#   image: oven/bun
+#   commands:
+#   - bun bunTest.ts
+
+# ------------------------------------------------ OK part upward
 
 ---
 kind: pipeline
@@ -42,6 +46,7 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - volta ls
   - bun run bunTest.ts
 
 ---
@@ -57,6 +62,7 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - volta ls
   - bun run bunTest.ts
 
 ---
@@ -72,6 +78,7 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - volta ls
   - bun run bunTest.ts
 
 ---
@@ -88,4 +95,5 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - volta ls
   - bun run bunTest.ts
