@@ -14,7 +14,7 @@ steps:
   - whoami
   - pwd
   - uname -a
-  - volta ls
+  - echo $SHELL
   - volta ls
   - bun run bunTest.ts
 
@@ -31,6 +31,7 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - echo $SHELL
   - volta ls
   - bun run bunTest.ts
 
@@ -50,7 +51,7 @@ steps:
   - whoami
   - pwd
   - uname -a
-  - volta ls
+  - echo $SHELL
   - volta ls
   - bun run bunTest.ts
 
@@ -71,6 +72,7 @@ steps:
   - whoami
   - pwd
   - uname -a
+  - echo $SHELL
   - volta ls
   - bun run bunTest.ts
 
