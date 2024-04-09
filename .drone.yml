@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: docker run bun on amd64
+name: docker run bun on linux amd64
 
 platform:
   os: linux
@@ -16,10 +16,11 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: docker run bun on arm64
+name: docker run bun on linux arm64
 
 platform:
-  os: darwin
+# docker runner unable use platform darwin?
+  os: linux
   arch: arm64
 
 steps:
@@ -31,7 +32,7 @@ steps:
 ---
 kind: pipeline
 type: exec
-name: exec run bun on amd64
+name: exec run bun on linux amd64
 
 platform:
   os: linux
@@ -46,10 +47,25 @@ steps:
 ---
 kind: pipeline
 type: exec
-name: exec run bun on arm64
+name: exec run bun on linux arm64
 
 platform:
   os: linux
+  arch: arm64
+
+steps:
+- name: greet
+  commands:
+  - echo hello from shell
+  - bun run bunTest.ts
+
+---
+kind: pipeline
+type: exec
+name: exec run bun on darwin arm64
+
+platform:
+  os: darwin
   arch: arm64
 
 steps:
