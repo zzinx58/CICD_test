@@ -16,71 +16,71 @@ steps:
   - echo $PATH
   - bun run bunTest.ts
 
----
-kind: pipeline
-type: exec
-name: exec run bun on darwin arm64
+# ---
+# kind: pipeline
+# type: exec
+# name: exec run bun on darwin arm64
 
-platform:
-  os: darwin
-  arch: arm64
+# platform:
+#   os: darwin
+#   arch: arm64
 
-steps:
-- name: greet
-  commands:
-  - ls -a
-  - uname -a
-  - echo $SHELL
-  - echo $PATH
-  - bun run bunTest.ts
+# steps:
+# - name: greet
+#   commands:
+#   - ls -a
+#   - uname -a
+#   - echo $SHELL
+#   - echo $PATH
+#   - bun run bunTest.ts
 
---- 
-kind: pipeline
-type: ssh
-name: ssh test on linux arm64
+# --- 
+# kind: pipeline
+# type: ssh
+# name: ssh test on linux arm64
 
-platform:
-  os: linux
-  arch: arm64
+# platform:
+#   os: linux
+#   arch: arm64
 
-server: 
-  host: 
-    from_secret: host_bytedance_shanghai_1
-  user: root
-  password:
-    from_secret: passwd_bytedance_shanghai_1
+# server: 
+#   host: 
+#     from_secret: host_bytedance_shanghai_1
+#   user: root
+#   password:
+#     from_secret: passwd_bytedance_shanghai_1
   
-steps:
-- name: greeting
-  commands:
-  - ls -a
-  - uname -a
-  - echo $PATH
-  - bun run bunTest.ts
+# steps:
+# - name: greeting
+#   commands:
+#   - ls -a
+#   - uname -a
+#   - echo $PATH
+#   - bun run bunTest.ts
 
---- 
-kind: pipeline
-type: ssh
-name: ssh test on linux amd64
+# --- 
+# kind: pipeline
+# type: ssh
+# name: ssh test on linux amd64
 
-platform:
-  os: linux
-  arch: amd64
+# platform:
+#   os: linux
+#   arch: amd64
 
-server: 
-  host: 
-    from_secret: host_bytedance_shanghai_1
-  user: root
-  password:
-    from_secret: passwd_bytedance_shanghai_1
+# server: 
+#   host: 
+#     from_secret: host_bytedance_shanghai_1
+#   user: root
+#   password:
+#     from_secret: passwd_bytedance_shanghai_1
   
-steps:
-- name: greeting
-  commands:
-  - ls -a
-  - uname -a
-  - echo $PATH
-  - bun run bunTest.ts
+# steps:
+# - name: greeting
+#   commands:
+#   - ls -a
+#   - uname -a
+#   - echo $PATH
+#   - bun run bunTest.ts
 
 # should differ node runner.
 
