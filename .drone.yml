@@ -11,6 +11,10 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - whoami
+  - pwd
+  - uname -a
+  - volta ls
   - volta ls
   - bun run bunTest.ts
 
@@ -43,6 +47,10 @@ steps:
 - name: greet
   commands:
   - echo hello from shell
+  - whoami
+  - pwd
+  - uname -a
+  - volta ls
   - volta ls
   - bun run bunTest.ts
 
