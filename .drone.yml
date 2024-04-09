@@ -63,7 +63,7 @@ name: exec run bun on darwin amd64
 
 platform:
   os: darwin
-  arch: arm64
+  arch: amd64
 
 steps:
 - name: greet
