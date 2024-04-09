@@ -15,6 +15,7 @@ steps:
   - pwd
   - uname -a
   - echo $SHELL
+  - ls -a
   - volta ls
   - bun run bunTest.ts
 
@@ -32,6 +33,7 @@ steps:
   commands:
   - echo hello from shell
   - echo $SHELL
+  - ls -a
   - volta ls
   - bun run bunTest.ts
 
@@ -52,33 +54,38 @@ steps:
   - pwd
   - uname -a
   - echo $SHELL
-  - volta ls
-  - bun run bunTest.ts
-
----
-kind: pipeline
-type: exec
-# exec runner not support darwin arm64?
-name: exec run bun on darwin amd64
-
-platform:
-  os: darwin
-  arch: amd64
-
-steps:
-- name: greet
-  commands:
-  - echo hello from shell
-  - whoami
-  - pwd
-  - uname -a
-  - echo $SHELL
+  - ls -a
   - volta ls
   - bun run bunTest.ts
 
 
 
 
+
+# --------------------------------------------- No Environment Below
+
+# ---
+# kind: pipeline
+# type: exec
+# # exec runner not support darwin arm64?
+# name: exec run bun on darwin amd64
+
+# platform:
+#   os: darwin
+#   arch: amd64
+
+# steps:
+# - name: greet
+#   commands:
+#   - echo hello from shell
+#   - whoami
+#   - pwd
+#   - uname -a
+#   - echo $SHELL
+#   - volta ls
+#   - bun run bunTest.ts
+
+# --------------------------------------------- No Environment Above
 
 
 
