@@ -1,6 +1,25 @@
 ---
 kind: pipeline
 type: exec
+name: exec run bun on linux amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: greet
+  commands:
+  - ls -a
+  - uname -a
+  - echo $PATH
+  - export /root/.bun/bin/bun
+  - echo $PATH
+  - bun run bunTest.ts
+
+---
+kind: pipeline
+type: exec
 name: exec run bun on darwin arm64
 
 platform:
@@ -10,14 +29,11 @@ platform:
 steps:
 - name: greet
   commands:
-  - echo hello from shell
-  - whoami
-  - pwd
-  - uname -a
-  - echo $SHELL
-  - echo $PATH
   - ls -a
-  - volta ls
+  - uname -a
+  - echo $PATH
+  - export /root/.bun/bin/bun
+  - echo $PATH
   - bun run bunTest.ts
 
 --- 
@@ -39,9 +55,12 @@ server:
 steps:
 - name: greeting
   commands:
+  - ls -a
   - uname -a
   - echo $PATH
-  - volta ls
+  - export /root/.bun/bin/bun
+  - echo $PATH
+  - bun run bunTest.ts
 
 --- 
 kind: pipeline
@@ -62,32 +81,17 @@ server:
 steps:
 - name: greeting
   commands:
+  - ls -a
   - uname -a
   - echo $PATH
-  - volta ls
+  - export /root/.bun/bin/bun
+  - echo $PATH
+  - bun run bunTest.ts
+
+# should differ node runner.
 
 
-# ---
-# kind: pipeline
-# type: exec
-# name: exec run bun on linux amd64
 
-# platform:
-#   os: linux
-#   arch: amd64
-
-# steps:
-# - name: greet
-#   commands:
-#   - echo hello from shell
-#   - whoami
-#   - pwd
-#   - uname -a
-#   - echo $SHELL
-#   - echo $PATH
-#   - ls -a
-#   - volta ls
-#   - bun run bunTest.ts
 
 # ---
 # kind: pipeline
