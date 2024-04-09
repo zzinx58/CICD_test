@@ -15,6 +15,7 @@ steps:
   - pwd
   - uname -a
   - echo $SHELL
+  - echo $PATH
   - ls -a
   - volta ls
   - bun run bunTest.ts
@@ -54,6 +55,7 @@ steps:
   - pwd
   - uname -a
   - echo $SHELL
+  - echo $PATH
   - ls -a
   - volta ls
   - bun run bunTest.ts
