@@ -23,7 +23,7 @@ steps:
 --- 
 kind: pipeline
 type: ssh
-name: ssh test
+name: ssh test on linux arm64
 
 platform:
   os: linux
@@ -46,7 +46,7 @@ steps:
 --- 
 kind: pipeline
 type: ssh
-name: ssh test
+name: ssh test on linux amd64
 
 platform:
   os: linux
