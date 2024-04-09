@@ -1,42 +1,4 @@
-# ---
-# kind: pipeline
-# type: exec
-# name: exec run bun on linux amd64
 
-# platform:
-#   os: linux
-#   arch: amd64
-
-# steps:
-# - name: greet
-#   commands:
-#   - echo hello from shell
-#   - whoami
-#   - pwd
-#   - uname -a
-#   - echo $SHELL
-#   - echo $PATH
-#   - ls -a
-#   - volta ls
-#   - bun run bunTest.ts
-
-# ---
-# kind: pipeline
-# type: exec
-# name: exec run bun on linux arm64
-
-# platform:
-#   os: linux
-#   arch: arm64
-
-# steps:
-# - name: greet
-#   commands:
-#   - echo hello from shell
-#   - echo $SHELL
-#   - ls -a
-#   - volta ls
-#   - bun run bunTest.ts
 
 ---
 kind: pipeline
@@ -84,6 +46,45 @@ steps:
   - volta ls
 
 
+# ---
+# kind: pipeline
+# type: exec
+# name: exec run bun on linux amd64
+
+# platform:
+#   os: linux
+#   arch: amd64
+
+# steps:
+# - name: greet
+#   commands:
+#   - echo hello from shell
+#   - whoami
+#   - pwd
+#   - uname -a
+#   - echo $SHELL
+#   - echo $PATH
+#   - ls -a
+#   - volta ls
+#   - bun run bunTest.ts
+
+# ---
+# kind: pipeline
+# type: exec
+# name: exec run bun on linux arm64
+
+# platform:
+#   os: linux
+#   arch: arm64
+
+# steps:
+# - name: greet
+#   commands:
+#   - echo hello from shell
+#   - echo $SHELL
+#   - ls -a
+#   - volta ls
+#   - bun run bunTest.ts
 
 
 
