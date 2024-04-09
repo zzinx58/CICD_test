@@ -1,0 +1,10 @@
+---
+kind: pipeline
+type: docker
+name: bun shell test
+
+steps:
+- name: run ts file
+  image: oven/bun
+  commands:
+  - bun bunTest.ts
