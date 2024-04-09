@@ -1,10 +1,25 @@
 ---
 kind: pipeline
 type: docker
-name: bun shell test
+name: docker run bun
 
 steps:
 - name: run ts file
   image: oven/bun
   commands:
   - bun bunTest.ts
+
+---
+kind: pipeline
+type: exec
+name: exec arm64 run bun
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: greet
+  commands:
+  - echo hello from shell
+  - bun run bunTest.ts
