@@ -43,6 +43,29 @@ steps:
   - echo $PATH
   - volta ls
 
+--- 
+kind: pipeline
+type: ssh
+name: ssh test
+
+platform:
+  os: linux
+  arch: amd64
+
+server: 
+  host: 
+    from_secret: host_bytedance_shanghai_1
+  user: root
+  password:
+    from_secret: passwd_bytedance_shanghai_1
+  
+steps:
+- name: greeting
+  commands:
+  - uname -a
+  - echo $PATH
+  - volta ls
+
 
 # ---
 # kind: pipeline
