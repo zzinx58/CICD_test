@@ -1,21 +1,4 @@
----
-kind: pipeline
-type: exec
-name: exec run bun on darwin arm64
 
-platform:
-  os: darwin
-  arch: arm64
-
-steps:
-- name: greet
-  commands:
-  - ls -a
-  - uname -a
-  - echo $HOME
-  - echo $PATH
-  - export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
-  - bun run bunTest.ts
 
 --- 
 kind: pipeline
@@ -40,7 +23,8 @@ steps:
   - uname -a
   - echo $HOME
   - echo $PATH
-  - export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+  - cd /Users/zzx58/Desktop
+  - echo $PATH
   - bun run bunTest.ts
 
 # --- 
@@ -162,6 +146,24 @@ steps:
 # platform:
 #   os: linux
 #   arch: amd64
+
+# steps:
+# - name: greet
+#   commands:
+#   - ls -a
+#   - uname -a
+#   - echo $HOME
+#   - echo $PATH
+#   - bun run bunTest.ts
+
+# ---
+# kind: pipeline
+# type: exec
+# name: exec run bun on darwin arm64
+
+# platform:
+#   os: darwin
+#   arch: arm64
 
 # steps:
 # - name: greet
