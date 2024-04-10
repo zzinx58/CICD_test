@@ -15,14 +15,20 @@ server:
     from_secret: passwd_bytedance_shanghai_1
   
 steps:
-- name: greeting
+- name: test PATH in differ workspace
+  clone:
+    disable: true
   commands:
-  - ls -a
   - uname -a
   - echo $HOME
   - echo $PATH
   - cd /root/devz
+  - echo $PATH
+- name: test
+  commands:
+  - pwd
   - ls -a
+  - echo $PATH
   - export PATH=/root/.bun/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
