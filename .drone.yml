@@ -28,6 +28,27 @@ steps:
   - echo $PATH
   - bun run bunTest.ts
 
+---
+kind: pipeline
+type: exec
+name: exec run bun on darwin arm64
+
+platform:
+  os: darwin
+  arch: arm64
+
+clone:
+  disable: true
+
+steps:
+- name: greet
+  commands:
+  - ls -a
+  - uname -a
+  - echo $HOME
+  - echo $PATH
+  - cd /Users/zzx58
+
 # --- 
 # kind: pipeline
 # type: ssh
