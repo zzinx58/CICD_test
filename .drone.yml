@@ -16,7 +16,7 @@ steps:
   - echo $HOME
   - echo $PATH
   - export BUN_INSTALL=/root/.bun
-  - echo $PATH
+  - ls /root/
   - bun run bunTest.ts
 
 # ---
