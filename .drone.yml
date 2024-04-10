@@ -13,6 +13,9 @@ steps:
   - ls -a
   - uname -a
   - echo $SHELL
+  - echo $HOME
+  - echo $PATH
+  - export BUN_INSTALL=/root/.bun
   - echo $PATH
   - bun run bunTest.ts
 
