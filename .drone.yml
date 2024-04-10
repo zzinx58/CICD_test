@@ -14,12 +14,13 @@ steps:
   - uname -a
   - echo $HOME
   - echo $PATH
+  - export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
   - bun run bunTest.ts
 
 --- 
 kind: pipeline
 type: ssh
-name: ssh test on linux arm64
+name: ssh test on linux arm64 to remote linux amd64
 
 platform:
   os: linux
@@ -39,6 +40,7 @@ steps:
   - uname -a
   - echo $HOME
   - echo $PATH
+  - export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
   - bun run bunTest.ts
 
 # --- 
