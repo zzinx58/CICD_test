@@ -7,6 +7,9 @@ platform:
   os: linux
   arch: arm64
 
+clone:
+  disable: true
+
 server: 
   host: 
     from_secret: host_bytedance_shanghai_1
