@@ -1,11 +1,11 @@
 --- 
 kind: pipeline
 type: ssh
-name: ssh test on linux arm64 to remote linux amd64
+name: ssh test on linux amd64 to linux amd64
 
 platform:
   os: linux
-  arch: arm64
+  arch: amd64
 
 server: 
   host: 
@@ -13,7 +13,7 @@ server:
   user: root
   password:
     from_secret: passwd_bytedance_shanghai_1
-  
+
 steps:
 - name: test PATH in differ workspace
   clone:
@@ -32,30 +32,6 @@ steps:
   - export PATH=/root/.bun/bin:$PATH
   - echo $PATH
   - bun run bunTest.ts
-
-# --- 
-# kind: pipeline
-# type: ssh
-# name: ssh test on linux amd64
-
-# platform:
-#   os: linux
-#   arch: amd64
-
-# server: 
-#   host: 
-#     from_secret: host_bytedance_shanghai_1
-#   user: root
-#   password:
-#     from_secret: passwd_bytedance_shanghai_1
-  
-# steps:
-# - name: greeting
-#   commands:
-#   - ls -a
-#   - uname -a
-#   - echo $PATH
-#   - bun run bunTest.ts
 
 # should differ node runner.
 
@@ -177,6 +153,41 @@ steps:
 #   - ls -a
 #   - uname -a
 #   - echo $HOME
+#   - echo $PATH
+#   - bun run bunTest.ts
+
+# --- 
+# kind: pipeline
+# type: ssh
+# name: ssh test on linux arm64 to remote linux amd64
+
+# platform:
+#   os: linux
+#   arch: arm64
+
+# server: 
+#   host: 
+#     from_secret: host_bytedance_shanghai_1
+#   user: root
+#   password:
+#     from_secret: passwd_bytedance_shanghai_1
+  
+# steps:
+# - name: test PATH in differ workspace
+#   clone:
+#     disable: true
+#   commands:
+#   - uname -a
+#   - echo $HOME
+#   - echo $PATH
+#   - cd /root/devz
+#   - echo $PATH
+# - name: test
+#   commands:
+#   - pwd
+#   - ls -a
+#   - echo $PATH
+#   - export PATH=/root/.bun/bin:$PATH
 #   - echo $PATH
 #   - bun run bunTest.ts
 
