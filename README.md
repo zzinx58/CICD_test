@@ -1,4 +1,5 @@
 # CICD_test
+[![Build Status](http://14.103.52.213:5348/api/badges/zzx58/CICD_test/status.svg?ref=refs/heads/main)](http://14.103.52.213:5348/zzx58/CICD_test)
 
 ## Test cases
 - docker run bun on linux amd64
