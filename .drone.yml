@@ -89,20 +89,20 @@ steps:
 
 # ----------------------------------------------- OK Part below
 
-# ---
-# kind: pipeline
-# type: docker
-# name: docker run bun on linux amd64
+---
+kind: pipeline
+type: docker
+name: docker run bun on linux amd64
 
-# platform:
-#   os: linux
-#   arch: amd64
+platform:
+  os: linux
+  arch: amd64
 
-# steps:
-# - name: run ts file
-#   image: oven/bun
-#   commands:
-#   - bun bunTest.ts
+steps:
+- name: run ts file
+  image: oven/bun
+  commands:
+  - bun bunTest.ts
 
 # ---
 # kind: pipeline
